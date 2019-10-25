@@ -1,0 +1,4 @@
+*.kt linguist-language=Kotlin
+*.cpp linguist-language=Kotlin
+*.h linguist-language=Kotlin
+*.c linguist-language=Kotlin
