@@ -59,8 +59,8 @@ interface DecodeOpusPresenter {
       opusDecodeFinish()
       return
     }
-    val tntOpusUtils = OpusUtils.getInstant()
-    val decoderHandler = tntOpusUtils.createDecoder(DEFAULT_AUDIO_SAMPLE_RATE, DEFAULT_OPUS_CHANNEL)
+    val opusUtils = OpusUtils.getInstant()
+    val decoderHandler = opusUtils.createDecoder(DEFAULT_AUDIO_SAMPLE_RATE, DEFAULT_OPUS_CHANNEL)
 
     val fis: FileInputStream
     try {
@@ -85,7 +85,7 @@ interface DecodeOpusPresenter {
       } else {
         if (needDecoder) {
           val decodeBufferArray = ShortArray(bufferArray.size * 4)
-          val size = tntOpusUtils.decode(decoderHandler, bufferArray, decodeBufferArray)
+          val size = opusUtils.decode(decoderHandler, bufferArray, decodeBufferArray)
           if (size > 0) {
             val decodeArray = ShortArray(size)
             System.arraycopy(decodeBufferArray, 0, decodeArray, 0, size)
@@ -99,7 +99,7 @@ interface DecodeOpusPresenter {
         }
       }
     }
-    tntOpusUtils.destroyDecoder(decoderHandler)
+    opusUtils.destroyDecoder(decoderHandler)
     bis.close()
     fis.close()
     opusDecodeFinish()

@@ -36,9 +36,6 @@
 
 #include "opus_types.h"
 #include "opus_defines.h"
-///TNT !!! compoents/libraries/util/Ŀ¼��Ҳ����app_error.h
-///TNT !!! ����������ȶ�λopusĿ¼�µ�app_error.h
-///TNT !!! MAKEFILE��keil����include·����Ҫ����Ѱ��opusĿ¼
 //#include "app_error.h"
 
 # if !defined(__GNUC_PREREQ)
